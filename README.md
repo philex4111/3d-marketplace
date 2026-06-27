@@ -4,7 +4,7 @@ A full-stack marketplace for 3D artists to sell models to game developers and di
 
 ## Overview
 
-MESH is built around how 3D asset marketplaces actually work: lightweight `.glb` previews for browsing, private `.zip` archives for purchased source files, and payments that work both locally and globally. The platform takes a **15% commission** on sales and keeps egress costs low by serving previews from Cloudflare R2 while vaulting source files behind pre-signed URLs that expire after **15 minutes**.
+MESH is built around how 3D asset marketplaces actually work: lightweight `.glb` previews for browsing, private `.zip` archives for purchased source files, and payments that work both locally and globally.
 
 Creators get a seller dashboard for uploads, sales tracking, and monetization tools. Platform admins get moderation, escrow, payouts, and earnings visibility through a dedicated admin panel.
 
@@ -60,7 +60,7 @@ Creators get a seller dashboard for uploads, sales tracking, and monetization to
        └── Meshy / Leonardo (AI credits)
 ```
 
-**Upload flow:** the frontend requests pre-signed PUT URLs from the API, uploads the display GLB to the public bucket and the source ZIP to the private vault, then creates the asset record in Supabase. Purchases are recorded as transactions; download requests verify ownership before issuing a short-lived vault URL.
+**Upload flow:** the frontend requests pre-signed PUT URLs from the API, uploads the display GLB to the public bucket and the source ZIP to the private vault, then creates the asset record in Supabase.
 
 ## Project structure
 
@@ -143,6 +143,29 @@ Backend settings are defined in `backend/app/core/config.py`. Important groups:
 - **$0** egress on downloads (R2-backed delivery model)
 - Additional revenue from featured listings, Pro subscriptions, and AI credit packs
 
+## Contributing
+
+We welcome community contributions! Whether you're fixing bugs, adding features, improving documentation, or enhancing the 3D viewer, your help makes MESH better.
+
+**Getting started:**
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+  - Setting up the development environment (frontend & backend)
+  - Code standards and commit conventions
+  - How to submit pull requests
+  - Testing requirements
+
+**Looking for ways to help?**
+- Check issues labeled [`good first issue`](https://github.com/philex4111/3d-marketplace/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) for beginner-friendly tasks
+- Look for [`help wanted`](https://github.com/philex4111/3d-marketplace/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) if you want to tackle something more challenging
+- Areas we're actively seeking help:
+  - **3D Viewer** — Performance, gesture support, export options
+  - **Dashboard UX** — Seller/admin interface improvements
+  - **Payment Integration** — Additional payment methods
+  - **Testing** — Unit and integration tests
+  - **Accessibility** — WCAG compliance improvements
+
+**Questions?** Open a [Discussion](https://github.com/philex4111/3d-marketplace/discussions) or create an [Issue](https://github.com/philex4111/3d-marketplace/issues).
+
 ## License
 
-Private project — add a license here if you plan to open-source or distribute it.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
