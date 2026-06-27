@@ -1,0 +1,12 @@
+fastapi>=0.110.0
+uvicorn==0.27.1
+supabase==2.4.0
+httpx==0.25.2
+gotrue==2.8.1
+python-dotenv==1.0.1
+boto3==1.34.50
+PyJWT==2.8.0
+pydantic>=2.7.0
+pydantic-settings>=2.0.0
+python-multipart==0.0.9
+requests>=2.31.0
