@@ -1,6 +1,14 @@
-# Environment variables
+# Environment variables (never commit secrets)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 backend/.env
 frontend/.env
+
+# Python / Node
+backend/venv/
+frontend/node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.DS_Store
